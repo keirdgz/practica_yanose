@@ -115,5 +115,19 @@ font-family:'Courier New', Courier, monospace ;
     margin-right: 10px;
     display: flexbox;
 
+}
 
+.pasantia1{
+    color: azure;
+    width: 1100px;
+    background: rgba(0, 0, 0, .4);
+    margin: 0 auto;
+    margin-top: 4%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.talleres2 > li {
+display: inline-flex;
 }
