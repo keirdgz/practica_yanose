@@ -38,8 +38,8 @@
                 Registrarse
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Estudiantes y egresados</a></li>
-                <li><a class="dropdown-item" href="">Empresas</a></li>
+                <li><a class="dropdown-item" href="egresados.php">Estudiantes y egresados</a></li>
+                <li><a class="dropdown-item" href="formpasantia.php">Empresas</a></li>
                 <li><a class="dropdown-item" href="vacantes1.php">Vacantes</a></li>
               </ul>
               <li class="nav-item dropdown">
@@ -47,13 +47,10 @@
                 Edición de formularios
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Estudiantes y egresados</a></li>
-                <li><a class="dropdown-item" href="">Empresas</a></li>
+                <li><a class="dropdown-item" href="editaregre.php">Estudiantes y egresados</a></li>
+                <li><a class="dropdown-item" href="editaremp.php">Empresas</a></li>
                 <li><a class="dropdown-item" href="editarvaca.php">Vacantes</a></li>
               </ul>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="iniciosesion.php">Inicia Sesion</a>
-          </li>
         </ul>
       </div>
     </div>
@@ -132,16 +129,16 @@
  require "conexionvaca.php";
  insertar($conexionvaca);
  function insertar ($conexionvaca) {
-    $nom_emp = $_POST['nombre_emp']?? null;
-    $nom_puest = $_POST['nombre_puest']?? null;
-    $funcion_puest = $_POST['funciones_puest']?? null;
-    $sueldo = $_POST['sueldo']?? null;
-    $ubicacion = $_POST['ubicacion']?? null;
-    $tp_contrato = $_POST['tipo_contrato']?? null;
-    $horario = $_POST['horario']?? null;
-    $curricul = $_POST['curriculum']?? null;
-    $p_contacto = $_POST['persona_contact']?? null;
-    $tel = $_POST['telefono']?? null;
+    $nom_emp = $_POST['nombre_emp'];
+    $nom_puest = $_POST['nombre_puest'];
+    $funcion_puest = $_POST['funciones_puest'];
+    $sueldo = $_POST['sueldo'];
+    $ubicacion = $_POST['ubicacion'];
+    $tp_contrato = $_POST['tipo_contrato'];
+    $horario = $_POST['horario'];
+    $curricul = $_POST['curriculum'];
+    $p_contacto = $_POST['persona_contact'];
+    $tel = $_POST['telefono'];
 
     $consulta = "INSERT INTO vacantes(nombre_empresa, nombre_puesto, funciones_puesto, sueldo, ubicacion, tipo_contrato, 
     horario, correo_curriculum, persona_contacto, telefono) VALUES ('$nom_emp','$nom_puest','$funcion_puest','$sueldo',
