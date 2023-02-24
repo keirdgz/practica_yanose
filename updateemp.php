@@ -39,8 +39,8 @@
                 Registrarse
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Estudiantes y egresados</a></li>
-                <li><a class="dropdown-item" href="">Empresas</a></li>
+                <li><a class="dropdown-item" href="egresados.php">Estudiantes y egresados</a></li>
+                <li><a class="dropdown-item" href="formpasantia.php">Empresas</a></li>
                 <li><a class="dropdown-item" href="vacantes1.php">Vacantes</a></li>
               </ul>
               <li class="nav-item dropdown">
@@ -48,13 +48,10 @@
                 Edición de formularios
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Estudiantes y egresados</a></li>
-                <li><a class="dropdown-item" href="">Empresas</a></li>
+                <li><a class="dropdown-item" href="editaregre.php">Estudiantes y egresados</a></li>
+                <li><a class="dropdown-item" href="editaremp.php">Empresas</a></li>
                 <li><a class="dropdown-item" href="editarvaca.php">Vacantes</a></li>
               </ul>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="iniciosesion.php">Inicia Sesion</a>
-          </li>
         </ul>
       </div>
     </div>
@@ -78,41 +75,45 @@ $resultcheck = mysqli_num_rows($result);
 
 if($resultcheck > 0){
     $row = mysqli_fetch_assoc($result);
-    $nom_emp = $row['nom_emp']?? null;
-    $rnc = $row['rnc']?? null;
-    $ident_emp = $row['ident_emp']?? null;
-    $dept_formacion = $row['dept_formacion']?? null;
-    $alcance_emp = $row['alcance_emp']?? null;
-    $actividad_emp = $row['actividad_emp']?? null;
-    $industria = $row['industria']?? null;
-    $tamano_emp = $row['tamano_emp']?? null;
-    $direccion = $row['direccion']?? null;
-    $sector = $row['sector']?? null;
-    $seccion = $row['seccion']?? null;
-    $municipio = $row['municipio']?? null;
-    $provincia = $row['provincia']?? null;
-    $pais_emp = $row['pais_emp']?? null;
-    $tel_principal = $row['tel_principal']?? null;
-    $tel_directo = $row['tel_directo']?? null;
-    $email = $row['email']?? null;
-    $confirmacion_email = $row['confirmacion_email']?? null;
-    $contrasena = $row['contrasena']?? null;
-    $confirmacion_contrasena = $row['confirmacion_contrasena']?? null;
-    $contacto_dentro_emp = $row['contacto_dentro_emp']?? null;
-    $tel_contacto = $row['tel_contacto']?? null;
-    $email_contacto = $row['email_contacto']?? null;
+    $nom_emp = $row['nom_emp'];
+    $rnc = $row['rnc'];
+    $ident_emp = $row['ident_emp'];
+    $dept_formacion = $row['dept_formacion'];
+    $alcance_emp = $row['alcance_emp'];
+    $actividad_emp = $row['actividad_emp'];
+    $industria = $row['industria'];
+    $tamano_emp = $row['tamano_emp'];
+    $direccion = $row['direccion'];
+    $sector = $row['sector'];
+    $seccion = $row['seccion'];
+    $municipio = $row['municipio'];
+    $provincia = $row['provincia'];
+    $pais_emp = $row['pais_emp'];
+    $tel_principal = $row['tel_principal'];
+    $tel_directo = $row['tel_directo'];
+    $email = $row['email'];
+    $confirmacion_email = $row['confirmacion_email'];
+    $contrasena = $row['contrasena'];
+    $confirmacion_contrasena = $row['confirmacion_contrasena'];
+    $contacto_dentro_emp = $row['contacto_dentro_emp'];
+    $tel_contacto = $row['tel_contacto'];
+    $email_contacto = $row['email_contacto'];
 }
 else {
   ?>
 
-<script>
-  Swal.fire({
-    icon:'sucess',
-    title: 'Se editó exitosamente',
-    text:'La informacion se ha editado'
-  }).then(function () {
-    window.location.href = "editaremp"
-  })
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Nombre o ID invalido',
+            text: 'Registro no encontrado, Revise los datos introducidos'
+        }).then(function () {
+            window.location.href = "editaremp.php"
+        })
+    </script>
+
+
+  </script>
 
   <?php
 }

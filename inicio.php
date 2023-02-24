@@ -36,8 +36,8 @@
                         Registrarse
                       </a>
                       <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="">Estudiantes y egresados</a></li>
-                        <li><a class="dropdown-item" href="">Empresas</a></li>
+                        <li><a class="dropdown-item" href="egresados.php">Estudiantes y egresados</a></li>
+                        <li><a class="dropdown-item" href="formpasantia.php">Empresas</a></li>
                         <li><a class="dropdown-item" href="vacantes1.php">Vacantes</a></li>
                       </ul>
                       <li class="nav-item dropdown">
@@ -45,13 +45,10 @@
                         Edición de formularios
                       </a>
                       <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="">Estudiantes y egresados</a></li>
-                        <li><a class="dropdown-item" href="">Empresas</a></li>
+                        <li><a class="dropdown-item" href="editaregre.php">Estudiantes y egresados</a></li>
+                        <li><a class="dropdown-item" href="editaremp.php">Empresas</a></li>
                         <li><a class="dropdown-item" href="editarvaca.php">Vacantes</a></li>
                       </ul>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="iniciosesion.php">Inicia Sesion</a>
-                  </li>
                 </ul>
               </div>
             </div>

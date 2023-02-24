@@ -22,13 +22,13 @@
 
 .form-egre{
     width: 912px;
-    background: #526f8d;
+    background: rgb(239, 229, 214);
     padding: 30px;
     margin: auto;
     margin-top: 100px;
     border-radius: 4px;
     font-family: 'calibri';
-    color: white;
+    color: black;
 }
 
 .form-egre h1{
@@ -38,19 +38,19 @@
 
 .formu{
     width: 100%;
-    background: #3b4b5b;
+    background: #e8ecee!important;
     padding: 7px;
     border-radius: 4px;
     margin-bottom: 16px;
     border: 1px solid #e47d1a;
     font-family: 'calibri';
     font-size: 18px;
-    color: white;
+    color: black;
 }
 
 .form-egre .botons{
     width: 100%;
-    background: #24303c;
+    background: #1f6fc1;
     border: none;
     padding: 12px;
     color: white;

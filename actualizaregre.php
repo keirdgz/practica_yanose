@@ -58,31 +58,21 @@
 
 </body>
 </html>
-
 <?php
 
 include_once 'conexionvaca.php';
 
-    $id = $_POST['id_empresa'];
-    $nom_emp = $_POST['nombre_empresa'];
-    $nom_puest = $_POST['nombre_puesto'];
-    $funcion_puest = $_POST['funciones_puesto'];
-    $sueldo = $_POST['sueldo'];
-    $ubicacion = $_POST['ubicacion'];
-    $tp_contrato = $_POST['tipo_contrato'];
-    $horario = $_POST['horario'];
-    $curricul = $_POST['correo_curriculum'];
-    $p_contacto = $_POST['persona_contacto'];
-    $tel = $_POST['telefono'];
+$id = $_REQUEST['idegresados'];
 
 //if(isser($_REQUEST['id'])) {
     //$idvacantes = $_REQUEST['idvacantes'];
 
-    $query = "update vacantes set nombre_empresa='$nom_emp', nombre_puesto='$nom_puest', funciones_puesto='$funcion_puest', sueldo='$sueldo', ubicacion='$ubicacion', tipo_contrato='$tp_contrato', 
-    horario='$horario', correo_curriculum='$curricul', persona_contacto='$p_contacto', telefono='$tel' where idvacantes='$id'";
+    $query = "update egresados set ano_graduacion='$_REQUEST[ano_graduacion]', inst_pertenece='$_REQUEST[inst_pertenece]', curso='$_REQUEST[curso]', matricula='$_REQUEST[matricula]', cedula='$_REQUEST[cedula]', carrera_tec='$_REQUEST[carrera_tec]', 
+    tec_basico='$_REQUEST[tec_basico]', nombre='$_REQUEST[nombre]', apellido='$_REQUEST[apellido]', fecha_nac='$_REQUEST[fecha_nac]', sexo='$_REQUEST[sexo]', direccion='$_REQUEST[direccion]', sector='$_REQUEST[sector]', seccion='$_REQUEST[seccion]',
+    municipio='$_REQUEST[municipio]', provincia='$_REQUEST[provincia]', pais_nacionalidad='$_REQUEST[pais_nacionalidad]', telefonoR='$_REQUEST[telefonoR]', telefonoM='$_REQUEST[telefonoM]', licencia_cd='$_REQUEST[licencia_cd]', vehiculo='$_REQUEST[vehiculo]', email='$_REQUEST[email]',
+    confirmacion_em='$_REQUEST[confirmacion_em]', contrasena='$_REQUEST[contrasena]', confirmacion_contra='$_REQUEST[confirmacion_contra]', curriculum='$_REQUEST[curriculum]', area_trabajo='$_REQUEST[area_trabajo]', anos_xp='$_REQUEST[anos_xp]', where idegresados='$_REQUEST[idegresados]'";
 
     mysqli_query($conexionvaca, $query);
-    echo 'Se actualizó correctamente'
 
-    ?>
 
+?>

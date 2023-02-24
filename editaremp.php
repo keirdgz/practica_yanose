@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="formemp.css">
+    <link rel="stylesheet" href="form.css">
 
 </head>
 <body>
@@ -38,8 +38,8 @@
                 Registrarse
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Estudiantes y egresados</a></li>
-                <li><a class="dropdown-item" href="">Empresas</a></li>
+                <li><a class="dropdown-item" href="egresados.php">Estudiantes y egresados</a></li>
+                <li><a class="dropdown-item" href="formpasantia.php">Empresas</a></li>
                 <li><a class="dropdown-item" href="vacantes1.php">Vacantes</a></li>
               </ul>
               <li class="nav-item dropdown">
@@ -47,13 +47,10 @@
                 Edición de formularios
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Estudiantes y egresados</a></li>
-                <li><a class="dropdown-item" href="">Empresas</a></li>
+                <li><a class="dropdown-item" href="editaregre.php">Estudiantes y egresados</a></li>
+                <li><a class="dropdown-item" href="editaremp.php">Empresas</a></li>
                 <li><a class="dropdown-item" href="editarvaca.php">Vacantes</a></li>
               </ul>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="iniciosesion.php">Inicia Sesion</a>
-          </li>
         </ul>
       </div>
     </div>
@@ -92,10 +89,10 @@
 
 <?php
 
-include_once 'conexion.php';
+include_once 'conexionvaca.php';
 
 $query = "SELECT * FROM empresa";
-$data = mysqli_query($conexion, $query);
+$data = mysqli_query($conexionvaca, $query);
 $total = mysqli_num_rows($data);
 
 ?>
