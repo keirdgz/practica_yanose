@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Vacantes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="form.css">
 
@@ -38,8 +39,8 @@
                 Registrarse
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Estudiantes y egresados</a></li>
-                <li><a class="dropdown-item" href="">Empresas</a></li>
+                <li><a class="dropdown-item" href="egresados.php">Estudiantes y egresados</a></li>
+                <li><a class="dropdown-item" href="formpasantia.php">Empresas</a></li>
                 <li><a class="dropdown-item" href="vacantes1.php">Vacantes</a></li>
               </ul>
               <li class="nav-item dropdown">
@@ -47,13 +48,10 @@
                 Edición de formularios
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Estudiantes y egresados</a></li>
-                <li><a class="dropdown-item" href="">Empresas</a></li>
+                <li><a class="dropdown-item" href="editaregre.php">Estudiantes y egresados</a></li>
+                <li><a class="dropdown-item" href="editaremp.php">Empresas</a></li>
                 <li><a class="dropdown-item" href="editarvaca.php">Vacantes</a></li>
               </ul>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="iniciosesion.php">Inicia Sesion</a>
-          </li>
         </ul>
       </div>
     </div>
@@ -62,8 +60,8 @@
 </header>
 
     <center><h3>Edita la vacante</h3></center>
-
-<?php
+  
+  <?php
 
 include_once 'conexionvaca.php';
 
@@ -74,18 +72,34 @@ $sql = "SELECT * FROM vacantes WHERE idvacantes=$idvacantes;";
 $result = mysqli_query($conexionvaca, $sql);
 $resultcheck = mysqli_num_rows($result);
 
+
 if($resultcheck > 0){
-    $row = mysqli_fetch_assoc($result);
-    $nom_emp = $row['nombre_empresa']?? null;
-    $nom_puest = $row['nombre_puesto']?? null;
-    $funcion_puest = $row['funciones_puesto']?? null;
-    $sueldo = $row['sueldo']?? null;
-    $ubicacion = $row['ubicacion']?? null;
-    $tp_contrato = $row['tipo_contrato']?? null;
-    $horario = $row['horario']?? null;
-    $curricul = $row['correo_curriculum']?? null;
-    $p_contacto = $row['persona_contacto']?? null;
-    $tel = $row['telefono']?? null;
+  
+    $row = mysqli_fetch_assoc($result); 
+    $nom_emp = $row['nombre_empresa'];
+    $nom_puest = $row['nombre_puesto'];
+    $funcion_puest = $row['funciones_puesto'];
+    $sueldo = $row['sueldo'];
+    $ubicacion = $row['ubicacion'];
+    $tp_contrato = $row['tipo_contrato'];
+    $horario = $row['horario'];
+    $curricul = $row['correo_curriculum'];
+    $p_contacto = $row['persona_contacto'];
+    $tel = $row['telefono'];
+}
+else {
+?>
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'ID de la vacante no encontrada',
+        text: 'Registro no encontrado, Revise los datos introducidos'
+    }).then(function () {
+        window.location.href = "editarvaca.php"
+    })
+</script>
+
+<?php
 }
 ?>
 
