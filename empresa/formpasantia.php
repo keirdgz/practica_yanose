@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica de formulario con conexión php</title>
+    <title>Empresas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
 <header>
@@ -187,6 +188,13 @@
 <input class="botons" type="submit" value="Enviar">
 
 </form>
+  
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
+
+</body>
 
 <footer class="text-center text-lg-start" style="background-color: #1f6fc1;">
     <div class="container d-flex justify-content-center py-5">
@@ -206,12 +214,6 @@
     <!-- Copyright -->
   </footer>
   
-</div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
-
-</body>
 </html>
 
 <?php
@@ -246,7 +248,8 @@
 
     $consulta = "INSERT INTO empresa(nom_emp, rnc, ident_emp, dept_formacion, alcance_emp, actividad_emp, industria,
     tamano_emp, direccion, sector, seccion, municipio, provincia, pais_emp, tel_principal, tel_directo,
-    email, confirmacion_email, contrasena, confirmacion_contrasena, contacto_dentro_emp, tel_contacto, email_contacto) VALUES ('$nom_emp','$rnc','$ident_emp','$dept_formacion','$alcance_emp','$actividad_emp','$industria','$tamano_emp','$direccion','$sector','$seccion','$municipio','$provincia','$pais_emp','$tel_principal','$tel_directo','$email','$confirmacion_email','$contrasena', '$confirmacion_contrasena', '$contacto_dentro_emp','$tel_contacto','$email_contacto')";
+    email, confirmacion_email, contrasena, confirmacion_contrasena, contacto_dentro_emp, tel_contacto, email_contacto) 
+    VALUES ('$nom_emp','$rnc','$ident_emp','$dept_formacion','$alcance_emp','$actividad_emp','$industria','$tamano_emp','$direccion','$sector','$seccion','$municipio','$provincia','$pais_emp','$tel_principal','$tel_directo','$email','$confirmacion_email','$contrasena', '$confirmacion_contrasena', '$contacto_dentro_emp','$tel_contacto','$email_contacto')";
 
 
 

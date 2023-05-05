@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
@@ -66,7 +67,7 @@
         <form method="post">
         <div class="form-group">
         Año de Graduación: <br>
-        <select class="formu" select class="controls" name="AñoGraduacion">
+        <select class="formu" select class="controls" name="AnoGraduacion">
             <option value="--Seleccione el año--">--Seleccione el año--</option>
             <option value="2018-2022">2018-2022</option>
             <option value="2019-2023">2019-2023</option>
@@ -164,7 +165,7 @@
         <input class="formu" select class="controls" type="text" name="Municipio" placeholder=""><br><br>
         </div>
         <div class="form-group">
-        Provimcia: <br>
+        Provincia: <br>
         <select class="formu" select class="controls" name="Provincia">
             <option value="Azua">Azua</option>
             <option value="Bahoruco">Bahoruco</option>
@@ -528,6 +529,29 @@
 </form>
     </section>
     </div>
+
+    <div class="container my-5">
+
+<footer class="text-center text-lg-start" style="background-color: #1f6fc1;">
+  <div class="container d-flex justify-content-center py-5">
+    <a href="https://www.facebook.com/IPISASDB/"><button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #1b5d9f;">
+      <i class="fa-brands fa-facebook"></i>
+    </button></a>
+    <a href="https://www.instagram.com/ipisasdb/"><button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #1b5d9f;">
+      <i class="fa-brands fa-instagram"></i>
+    </button></a>
+  </div>
+
+  <!-- Copyright -->
+  <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-white" href="inicio.html">IPISA</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+</div>
+
 </body>
 </html>
 
@@ -539,7 +563,7 @@
 require_once "conexionvaca.php";
 insertar($conexionvaca);
 function insertar ($conexionvaca) {
-$año_graduacion = $_POST['AñoGraduacion'];
+$ano_graduacion = $_POST['AnoGraduacion'];
 $inst_pertenece = $_POST['Institución'];
 $curso = $_POST['Curso'];
 $matricula = $_POST['Matricula'];
@@ -562,18 +586,19 @@ $licencia_cd = $_POST['Licencia'];
 $vehiculo = $_POST['Vehiculo'];
 $email = $_POST['Correo'];
 $confirmacion_em = $_POST['Correoc'];
-$contraseña = $_POST['Contrasena'];
+$contrasena = $_POST['Contrasena'];
 $confirmacion_contra = $_POST['ContrasenaC'];
-$años_xp = $_POST['Anos_xp'];
+$anos_xp = $_POST['Anos_xp'];
 $curriculum = $_POST['Curriculum'];
 $area_trabajo = $_POST['Area'];
 
 $consulta = "INSERT INTO egresados(ano_graduacion, inst_pertenece, curso, matricula, cedula, carrera_tec, tec_basico, nombre, apellido, 
 fecha_nac, sexo, direccion, sector, seccion, municipio, provincia, pais_nacionalidad, telefonoR, telefonoM, licencia_cd, vehiculo, email, 
-confirmacion_em, contrasena, confirmacion_contra, anos_xp, curriculum, area_trabajo) VALUES ('$año_graduacion', '$inst_pertenece','$curso',
+confirmacion_em, contrasena, confirmacion_contra, anos_xp, curriculum, area_trabajo) VALUES ('$ano_graduacion', '$inst_pertenece','$curso',
 '$matricula','$cedula','$carrera_tec','$tec_basico','$nombre','$apellido','$fecha_nac','$sexo','$direccion','$sector', '$seccion','$municipio',
-'$provincia','$pais_nacionalidad','$telefonoR','$telefonoM','$licencia_cd','$vehiculo','$email','$confirmacion_em', '$contraseña',
-'$confirmacion_contra','$años_xp','$curriculum','$area_trabajo')";
+'$provincia','$pais_nacionalidad','$telefonoR','$telefonoM','$licencia_cd','$vehiculo','$email','$confirmacion_em', '$contrasena',
+'$confirmacion_contra','$anos_xp','$curriculum','$area_trabajo')";
+
 mysqli_query($conexionvaca, $consulta);
 mysqli_close($conexionvaca);
 

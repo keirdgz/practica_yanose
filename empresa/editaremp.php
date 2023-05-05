@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/estilo.css">
 
 </head>
 <body>
@@ -61,13 +61,13 @@
 
 <section class="form-egre">
 
-<center><h3>Inserte el id o nombre de la vacante que desea buscar</h3></center>
+<center><h3>Inserte el ID o nombre de la empresa que desea buscar</h3></center>
 
 <br>
 
-<form action="buscarvaca.php" method="POST">
+<form action="buscaremp.php" method="POST">
 
-<input type="text" class="formu" name="nombre" placeholder="ID o Nombre">
+<input type="text" class="formu" name="nom_emp" placeholder="ID o Nombre">
 <button type="submit" class="formu" name="buscar">Buscar</button>
 
 </form>
@@ -76,11 +76,11 @@
 <br>
 
     
-<center><h3>Inserte el id de la vacante que quiera editar</h3></center>
+<center><h3>Inserte el ID de la empresa que quiera editar</h3></center>
 
 <br>
 
-<form action="updatevaca.php" method="GET">
+<form action="updateemp.php" method="GET">
 
 <input type="text" class="formu" name="id" placeholder="ID">
 <button type="submit" class="formu" name="update">Editar</button>
@@ -91,7 +91,8 @@
 <?php
 
 include_once 'conexionvaca.php';
-$query = "SELECT * FROM vacantes";
+
+$query = "SELECT * FROM empresa";
 $data = mysqli_query($conexionvaca, $query);
 $total = mysqli_num_rows($data);
 

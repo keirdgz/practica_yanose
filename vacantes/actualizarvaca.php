@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualizar egresados</title>
+    <title>Actualizar vacantes</title>
 </head>
 <body>
     
@@ -61,18 +61,28 @@
 
 <?php
 
-include_once 'conexion.php';
+include_once 'conexionvaca.php';
 
+    $id = $_POST['id_empresa'];
+    $nom_emp = $_POST['nombre_empresa'];
+    $nom_puest = $_POST['nombre_puesto'];
+    $funcion_puest = $_POST['funciones_puesto'];
+    $sueldo = $_POST['sueldo'];
+    $ubicacion = $_POST['ubicacion'];
+    $tp_contrato = $_POST['tipo_contrato'];
+    $horario = $_POST['horario'];
+    $curricul = $_POST['correo_curriculum'];
+    $p_contacto = $_POST['persona_contacto'];
+    $tel = $_POST['telefono'];
 
-$id = $_REQUEST['idempresa'];
+//if(isser($_REQUEST['id'])) {
+    //$idvacantes = $_REQUEST['idvacantes'];
 
-    $query = "update empresa set nom_emp='$_REQUEST[nom_emp]', rnc='$_REQUEST[rnc]', ident_emp='$_REQUEST[ident_emp]', dept_formacion='$_REQUEST[dept_formacion]', alcance_emp='$_REQUEST[alcance_emp]', actividad_emp='$_REQUEST[actividad_emp]', 
-    industria='$_REQUEST[industria]', tamano_emp='$_REQUEST[tamano_emp]', direccion='$_REQUEST[direccion]', sector='$_REQUEST[sector]', seccion='$_REQUEST[seccion]', municipio='$_REQUEST[municipio]', provincia='$_REQUEST[provincia]', pais_emp='$_REQUEST[pais_emp]', tel_principal='$_REQUEST[tel_principal]',
-    tel_directo='$_REQUEST[tel_directo]', email='$_REQUEST[email]', confirmacion_email='$_REQUEST[confirmacion_email]', contrasena='$_REQUEST[contrasena]', confirmacion_contrasena='$_REQUEST[confirmacion_contrasena]', contacto_dentro_emp='$_REQUEST[contacto_dentro_emp]', tel_contacto='$_REQUEST[tel_contacto]', email_contacto='$_REQUEST[email_contacto]' where idempresa='$_REQUEST[idempresa]'";
+    $query = "update vacantes set nombre_empresa='$nom_emp', nombre_puesto='$nom_puest', funciones_puesto='$funcion_puest', sueldo='$sueldo', ubicacion='$ubicacion', tipo_contrato='$tp_contrato', 
+    horario='$horario', correo_curriculum='$curricul', persona_contacto='$p_contacto', telefono='$tel' where idvacantes='$id'";
 
-    mysqli_query($conexion, $query);
- 
+    mysqli_query($conexionvaca, $query);
+    echo 'Se actualizó correctamente'
 
-
-?>
+    ?>
 
