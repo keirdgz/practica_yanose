@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar</title>
+    <title>Editar Vacantes</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/estilo.css">
 
 </head>
 <body>
@@ -59,45 +60,69 @@
 
 </header>
 
-<section class="form-egre">
-
-<center><h3>Inserte el id o nombre de la vacante que desea buscar</h3></center>
-
-<br>
-
-<form action="buscarvaca.php" method="POST">
-
-<input type="text" class="formu" name="nombre" placeholder="ID o Nombre">
-<button type="submit" class="formu" name="buscar">Buscar</button>
-
-</form>
-
-<br>
-<br>
-
-    
-<center><h3>Inserte el id de la vacante que quiera editar</h3></center>
-
-<br>
-
-<form action="updatevaca.php" method="GET">
-
-<input type="text" class="formu" name="id" placeholder="ID">
-<button type="submit" class="formu" name="update">Editar</button>
-
-</form>
-</section>
-
-<?php
+    <center><h3>Edita la vacante</h3></center>
+  
+  <?php
 
 include_once 'conexionvaca.php';
-$query = "SELECT * FROM vacantes";
-$data = mysqli_query($conexionvaca, $query);
-$total = mysqli_num_rows($data);
 
+$idvacantes = $_REQUEST['id'];
+
+$sql = "SELECT * FROM vacantes WHERE idvacantes=$idvacantes;";
+
+$result = mysqli_query($conexionvaca, $sql);
+$resultcheck = mysqli_num_rows($result);
+
+
+if($resultcheck > 0){
+  
+    $row = mysqli_fetch_assoc($result); 
+    $nom_emp = $row['nombre_empresa'];
+    $nom_puest = $row['nombre_puesto'];
+    $funcion_puest = $row['funciones_puesto'];
+    $sueldo = $row['sueldo'];
+    $ubicacion = $row['ubicacion'];
+    $tp_contrato = $row['tipo_contrato'];
+    $horario = $row['horario'];
+    $curricul = $row['correo_curriculum'];
+    $p_contacto = $row['persona_contacto'];
+    $tel = $row['telefono'];
+}
+else {
+?>
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'ID de la vacante no encontrada',
+        text: 'Registro no encontrado, Revise los datos introducidos'
+    }).then(function () {
+        window.location.href = "editarvaca.php"
+    })
+</script>
+
+<?php
+}
 ?>
 
-</table>
+<section class="form-egre">
+
+<form action="actualizarvaca.php" method="POST">
+    <input type="text"  class="formu" select class="controls" name="idvacantes" placeholder="Id" value="<?php echo $idvacantes?>"><br><br>
+    <input type="text"  class="formu" select class="controls" name="nombre_empresa" placeholder="Nombre" value="<?php echo $nom_emp?>"><br><br>
+    <input type="text"  class="formu" select class="controls" name="nombre_puesto" placeholder="Puesto" value="<?php echo $nom_puest?>"><br><br>
+    <input type="text"  class="formu" select class="controls" name="funciones_puesto" placeholder="Funcion del puesto" value="<?php echo $funcion_puest?>"><br><br>
+    <input type="text"  class="formu" select class="controls" name="sueldo" placeholder="Sueldo" value="<?php echo $sueldo?>"><br><br>
+    <input type="text"  class="formu" select class="controls" name="ubicacion" placeholder="Ubicacion" value="<?php echo $ubicacion?>"><br><br>
+    <input type="text"  class="formu" select class="controls" name="tipo_contrato" placeholder="Tipo de contrato" value="<?php echo $tp_contrato?>"><br><br>
+    <input type="text"  class="formu" select class="controls" name="horario" placeholder="Horario" value="<?php echo $horario?>"><br><br>
+    <input type="text"  class="formu" select class="controls" name="correo_curriculum" placeholder="Correo curriculum" value="<?php echo $curricul?>"><br><br>
+    <input type="text"  class="formu" select class="controls" name="persona_contacto" placeholder="Persona de contacto" value="<?php echo $p_contacto?>"><br><br>
+    <input type="text"  class="formu" select class="controls" name="telefono" placeholder="Telefono" value="<?php echo $tel?>"><br><br>
+
+
+<button type="submit" button class="botons" name="update">Editar</button>
+</section>
+</form>
 <div class="container my-5">
 
   <footer class="text-center text-lg-start" style="background-color: #1f6fc1;">

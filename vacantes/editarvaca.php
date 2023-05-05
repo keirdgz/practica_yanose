@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilo.css">
-    <title>Buscar</title>
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/estilo.css">
 
-
-    
 </head>
 <body>
 
@@ -50,8 +49,8 @@
                 Edición de formularios
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="egresados.php">Estudiantes y egresados</a></li>
-                <li><a class="dropdown-item" href="formpasantia.php">Empresas</a></li>
+                <li><a class="dropdown-item" href="editaregre.php">Estudiantes y egresados</a></li>
+                <li><a class="dropdown-item" href="editaremp.php">Empresas</a></li>
                 <li><a class="dropdown-item" href="editarvaca.php">Vacantes</a></li>
               </ul>
         </ul>
@@ -61,78 +60,46 @@
 
 </header>
 
-    <br>
-    <br>
+<section class="form-egre">
 
-<main class="container o-container">
+<center><h3>Inserte el id o nombre de la vacante que desea buscar</h3></center>
 
-    <table class="table">
-  <thead>
-    <tr>
-      <th name="ID">ID</th>
-      <th>Empresa</th>
-      <th>Puesto</th>
-      <th>FuncionP</th>
-      <th>Sueldo</th>
-      <th>Ubicacion</th>
-      <th>Contrato</th>
-      <th>Horario</th>
-      <th>Correo</th>
-      <th>Contacto</th>
-      <th>Telefono</th>
-      <th>Borrar</th>
+<br>
 
-    </tr>
-  </thead>
+<form action="buscarvaca.php" method="POST">
 
-  <?php
-require("conexionvaca.php");
+<input type="text" class="formu" name="nombre" placeholder="ID o Nombre">
+<button type="submit" class="formu" name="buscar">Buscar</button>
 
-$nombre_empresa= $_REQUEST["nombre"];
+</form>
 
-$query= "SELECT * FROM vacantes WHERE nombre_empresa LIKE '%$nombre_empresa%' or idvacantes='$nombre_empresa'";
+<br>
+<br>
+
+    
+<center><h3>Inserte el id de la vacante que quiera editar</h3></center>
+
+<br>
+
+<form action="updatevaca.php" method="GET">
+
+<input type="text" class="formu" name="id" placeholder="ID">
+<button type="submit" class="formu" name="update">Editar</button>
+
+</form>
+</section>
+
+<?php
+
+include_once 'conexionvaca.php';
+$query = "SELECT * FROM vacantes";
 $data = mysqli_query($conexionvaca, $query);
 $total = mysqli_num_rows($data);
 
-if ($total!=0) {
-    while ($row=mysqli_fetch_assoc($data)) {
-
-        echo
-   
-        "<tr>
-        <td>" . $row['idvacantes'] . "</td>
-        <td>" . $row['nombre_empresa'] . "</td>
-        <td>" . $row['nombre_puesto'] . "</td>
-        <td>" . $row['funciones_puesto'] . "</td>
-        <td>" . $row['sueldo'] . "</td>
-        <td>" . $row['ubicacion'] . "</td>
-        <td>" . $row['tipo_contrato'] . "</td>
-        <td>" . $row['horario'] . "</td>
-        <td>" . $row['correo_curriculum'] . "</td>
-        <td>" . $row['persona_contacto'] . "</td>
-        <td>" . $row['telefono'] . "</td>
-        <td> <a href='eliminarvaca.php?id=$row[idvacantes]'>Borrar</td>
-        </tr>";;
-
-    }
-}   else{
-    ?>
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Nombre o ID invalido',
-            text: 'Registro no encontrado, Revise los datos introducidos'
-        }).then(function () {
-            window.location.href = "editarvaca.php"
-        })
-    </script>
- <?php
-}
 ?>
 
-    </table>
-    </main>
-    <div class="container my-5">
+</table>
+<div class="container my-5">
 
   <footer class="text-center text-lg-start" style="background-color: #1f6fc1;">
     <div class="container d-flex justify-content-center py-5">
