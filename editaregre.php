@@ -87,7 +87,7 @@
 
     <br>
 
-    <form action="update_egre.php" method="GET">
+    <form action="updateegre.php" method="POST">
 
       <input type="text" class="formu" name="id" placeholder="ID">
       <button type="submit" class="formu" name="update">Editar</button>

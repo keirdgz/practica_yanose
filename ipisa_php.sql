@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
 -- Host: localhost    Database: ipisa_php
 -- ------------------------------------------------------
--- Server version	8.0.26
+-- Server version	8.0.32
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,12 +28,12 @@ CREATE TABLE `egresados` (
   `inst_pertenece` char(100) NOT NULL,
   `curso` char(10) NOT NULL,
   `matricula` char(20) NOT NULL,
-  `cedula` int NOT NULL,
-  `carrera_tec` char(50) NOT NULL,
+  `cedula` char(12) NOT NULL,
+  `carrera_tec` varchar(70) NOT NULL,
   `tec_basico` char(20) NOT NULL,
   `nombre` char(20) NOT NULL,
   `apellido` char(20) NOT NULL,
-  `fecha_nac` date NOT NULL,
+  `fecha_nac` varchar(45) NOT NULL,
   `sexo` char(10) NOT NULL,
   `direccion` varchar(45) NOT NULL,
   `sector` varchar(45) NOT NULL,
@@ -46,14 +46,13 @@ CREATE TABLE `egresados` (
   `vehiculo` char(3) NOT NULL,
   `email` varchar(45) NOT NULL,
   `confirmacion_em` char(10) NOT NULL,
-  `contraseña` char(20) NOT NULL,
+  `contrasena` char(20) NOT NULL,
   `confirmacion_contra` char(20) NOT NULL,
   `anos_xp` char(10) NOT NULL,
   `curriculum` varchar(250) NOT NULL,
   `area_trabajo` varchar(100) NOT NULL,
-  `egresadoscol` varchar(45) NOT NULL,
   PRIMARY KEY (`idegresados`)
-);
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,6 +61,7 @@ CREATE TABLE `egresados` (
 
 LOCK TABLES `egresados` WRITE;
 /*!40000 ALTER TABLE `egresados` DISABLE KEYS */;
+INSERT INTO `egresados` VALUES (2,'2018-2022','Instituto Politécnico Hainamosa (Juan Félix Pepén)','5to','234242','03193928323','Gestión Administrativa y Tributaria','basico','Alfonso','Vasquez','12 de julio de 1995','Masculino','dadsadsasad','csdcds','dcsdcs','sdcsddcds','Independencia','Republica Dominicana','8093737212','on','on','alfonsito@gmail.com','','12345','12345','2','Ciberprestamos SAN.jpg','Electromecánica de vehículos'),(5,'2019-2023','Instituto Politécnico Industrial de Santiago (IPISA)','6to','878765567','00099897','Desarrollo y Administración de Aplicaciones Informáticas','basico','Caroline','Jimenez','090523','Femenino','DJAKJSJSKLAJDGRKJG','DKSDJFKJSF','LSJDFLKJS','Punal','Distrito Nacional','Republica Dominicana','8294274899','on','on','carolinejimenez888@gmail.com','','rosario24','rosario24','2','Azul Cielo Fondo Color Hermoso.jpg','Desarrollo y Administración de Aplicaciones Informáticas');
 /*!40000 ALTER TABLE `egresados` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,7 +75,7 @@ DROP TABLE IF EXISTS `empresa`;
 CREATE TABLE `empresa` (
   `idempresa` int NOT NULL AUTO_INCREMENT,
   `nom_emp` varchar(45) NOT NULL,
-  `rnc` int NOT NULL,
+  `rnc` char(12) NOT NULL,
   `ident_emp` char(2) NOT NULL,
   `dept_formacion` char(2) NOT NULL,
   `alcance_emp` char(15) NOT NULL,
@@ -92,11 +92,13 @@ CREATE TABLE `empresa` (
   `tel_directo` char(12) NOT NULL,
   `email` varchar(45) NOT NULL,
   `confirmacion_email` varchar(45) NOT NULL,
+  `contrasena` varchar(45) NOT NULL,
+  `confirmacion_contrasena` varchar(45) NOT NULL,
   `contacto_dentro_emp` varchar(45) NOT NULL,
   `tel_contacto` char(12) NOT NULL,
   `email_contacto` varchar(45) NOT NULL,
   PRIMARY KEY (`idempresa`)
-);
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,6 +107,7 @@ CREATE TABLE `empresa` (
 
 LOCK TABLES `empresa` WRITE;
 /*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
+INSERT INTO `empresa` VALUES (1,'Secomsa','2345676543','Si','No','Nacional/Local','ctfvyhjikoluhygtfrdftvgbhnjmkcs','ganaderia','pequeña','Calle principal','Arenoso','nkdoakda','Punal','santiago','Repdom','8095707867','8296212814','kei@gmail.com','kei@gmail.com','12345','12345','Luis GOmez','8096212929','luis@gmail.com'),(2,'','','','','','','','','','','','','','','','','','','','','','',''),(3,'Celucell','989000444','Si','No','Nacional/Local','wedrftgyuiojuhygt5fr4d3eseso mimo','comercio','micro','La torre','La torre','jadaddjasd','La torre','lavega','Repdom','8094445555','8093334444','celucell@gmail.com','celucell@gmail.com','celucell','celucell','8095556666','8095556666','celucell@gmail.com');
 /*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +131,7 @@ CREATE TABLE `vacantes` (
   `persona_contacto` char(20) NOT NULL,
   `telefono` char(12) NOT NULL,
   PRIMARY KEY (`idvacantes`)
-);
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,8 +140,13 @@ CREATE TABLE `vacantes` (
 
 LOCK TABLES `vacantes` WRITE;
 /*!40000 ALTER TABLE `vacantes` DISABLE KEYS */;
+INSERT INTO `vacantes` VALUES (5,'Secomsa','ascvfsdsa','cvbgrteredcvgfws',10000,'Calsldaldada','Temporal','1pm a 12pm','kei@gmail.com','Luis reyes','8097319382');
 /*!40000 ALTER TABLE `vacantes` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'ipisa_php'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -149,4 +157,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-09 22:53:33
+-- Dump completed on 2023-05-08 12:53:25
