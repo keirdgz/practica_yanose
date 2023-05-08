@@ -5,12 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vacantes</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/form.css">
   <link rel="stylesheet" href="css/estilo.css">
-  <title>IPISA</title>
+
 </head>
 
 <body>
+
   <header>
 
     <nav class="navbar navbar-expand-lg bg-secondary">
@@ -58,83 +61,54 @@
 
   </header>
 
-  <br>
-  <br>
+  <section class="form-egre">
 
-  <main class="container o-container">
-    <div class="container" id="who">
+    <center>
+      <h1>Vacantes</h1>
+    </center>
 
-      <div class="lead1">
+    <form action="vacantes1.php" method="post">
 
-
-        <h1>¿Qué es el módulo de Formación en Centros de Trabajo</h1>
-        <br><br>
-        <p>El Módulo de formación en Centros de Trabajo (MFCT), es un bloque coherente de formación específica, constituido
-          por un conjunto de resultados de aprendizaje y unos criterios de evaluación que orientan la realización de las a
-          ctividades formativas de los estudiantes en el centro de trabajo. Es una porción del programa de estudio,
-          donde los estudiantes de bachilleratos técnicos realizan una práctica laboral de aprendizaje dentro de un
-          Centro de Trabajo, ya sea empresa,institución u organización, a fin de que estos desarrollen nuevas competencias
-          y fortalezcan los conocimientos adquiridos en su Centro Educativo que les permitan insertarse en el mercado laboral.
-        </p>
-      </div>
-    </div>
-
-    <br><br>
-
-    <img src="img/pasantia.jpg" width="550" alt="" class="box-img2">
-
-    <br><br>
-
-    <div class="container marketing">
-      <center>
-        <h2 class="h2">Cantidad de horas correspondientes a pasantía por taller:</h2>
-      </center>
+      <p>Nombre de la empresa:<br>
+        <input type="text" class="formu" name="nombre_emp" size="50">
+      </p>
+      <p>Nombre del puesto:<br>
+        <input type="text" class="formu" name="nombre_puest" size="50">
+      </p>
+      <p>Funciones del puesto:<br>
+        <textarea class="formu" name="funciones_puest"></textarea>
+      </p>
+      <p>Sueldo: <br>
+        <input type="text" class="formu" name="sueldo" size="50">
+      </p>
+      <p>Ubicacion:<br>
+        <input type="text" class="formu" name="ubicacion" size="50">
+      </p>
+      <p>Tipo del contrato:<br>
+        <select name="tipo_contrato" class="formu">
+          <option value="Temporal">Temporal</option>
+          <option value="Fijo">Fijo</option>
+        </select>
+      </p>
+      <p>Horario:<br>
+        <input type="text" class="formu" name="horario" size="50">
+      </p>
+      <p>Correo para los curriculums:<br>
+        <input type="text" class="formu" name="curriculum" size="50">
+      </p>
+      <p>Persona de contacto:<br>
+        <input type="text" class="formu" name="persona_contact" size="50">
+      </p>
+      <p>Telefono:<br>
+        <input type="text" class="formu" name="telefono" size="50">
+      </p>
       <br>
+      <input type="submit" class="botons" value="Enviar">
 
+      </p>
+    </form>
 
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <center>
-                <h5 class="card-title">360 horas</h5>
-              </center>
-              <center><img src="img/servicio.png" class="card-img-top" alt=""></center>
-              <p class="card-text">
-
-              <ul class="talleres2">
-                <li>Desarrollo Administrativa de Aplicaciones Informaticas</li>
-                <li>Gestion Administrativa y Tributaria</li>
-                <li>Electricidad</li>
-                <li>Electrónica</li>
-                <li>Ebanistería</li>
-              </ul>
-
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <center>
-                <h5 class="card-title">720 horas</h5>
-              </center>
-              <center><img src="img/industrial.png" class="card-img-top" alt=""></center>
-              <p class="card-text">
-
-              <ul class="talleres4">
-                <li>Confeccion y Patronaje</li>
-                <li>Mecanizado</li>
-                <li>Industrial</li>
-              </ul>
-
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </section>
   </main>
 
   <div class="container my-5">
@@ -160,8 +134,37 @@
   </div>
 
 
-  <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 
+<script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+
 </html>
+
+<?php
+require "conexionvaca.php";
+insertar($conexionvaca);
+function insertar($conexionvaca)
+{
+  $nom_emp = $_POST['nombre_emp'];
+  $nom_puest = $_POST['nombre_puest'];
+  $funcion_puest = $_POST['funciones_puest'];
+  $sueldo = $_POST['sueldo'];
+  $ubicacion = $_POST['ubicacion'];
+  $tp_contrato = $_POST['tipo_contrato'];
+  $horario = $_POST['horario'];
+  $curricul = $_POST['curriculum'];
+  $p_contacto = $_POST['persona_contact'];
+  $tel = $_POST['telefono'];
+
+  $consulta = "INSERT INTO vacantes(nombre_empresa, nombre_puesto, funciones_puesto, sueldo, ubicacion, tipo_contrato, 
+    horario, correo_curriculum, persona_contacto, telefono) VALUES ('$nom_emp','$nom_puest','$funcion_puest','$sueldo',
+    '$ubicacion','$tp_contrato','$horario','$curricul','$p_contacto','$tel')";
+
+  mysqli_query($conexionvaca, $consulta);
+  mysqli_close($conexionvaca);
+
+}
+
+?>

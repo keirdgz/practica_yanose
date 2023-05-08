@@ -5,12 +5,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Vacantes</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/form.css">
   <link rel="stylesheet" href="css/estilo.css">
-  <title>IPISA</title>
+
 </head>
 
 <body>
+
   <header>
 
     <nav class="navbar navbar-expand-lg bg-secondary">
@@ -58,85 +62,70 @@
 
   </header>
 
-  <br>
-  <br>
+  <center>
+    <h3>Edita la vacante</h3>
+  </center>
 
-  <main class="container o-container">
-    <div class="container" id="who">
+  <?php
 
-      <div class="lead1">
+  include_once 'conexionvaca.php';
 
+  $idvacantes = $_REQUEST['id'];
 
-        <h1>¿Qué es el módulo de Formación en Centros de Trabajo</h1>
-        <br><br>
-        <p>El Módulo de formación en Centros de Trabajo (MFCT), es un bloque coherente de formación específica, constituido
-          por un conjunto de resultados de aprendizaje y unos criterios de evaluación que orientan la realización de las a
-          ctividades formativas de los estudiantes en el centro de trabajo. Es una porción del programa de estudio,
-          donde los estudiantes de bachilleratos técnicos realizan una práctica laboral de aprendizaje dentro de un
-          Centro de Trabajo, ya sea empresa,institución u organización, a fin de que estos desarrollen nuevas competencias
-          y fortalezcan los conocimientos adquiridos en su Centro Educativo que les permitan insertarse en el mercado laboral.
-        </p>
-      </div>
-    </div>
+  $sql = "SELECT * FROM vacantes WHERE idvacantes=$idvacantes;";
 
-    <br><br>
-
-    <img src="img/pasantia.jpg" width="550" alt="" class="box-img2">
-
-    <br><br>
-
-    <div class="container marketing">
-      <center>
-        <h2 class="h2">Cantidad de horas correspondientes a pasantía por taller:</h2>
-      </center>
-      <br>
+  $result = mysqli_query($conexionvaca, $sql);
+  $resultcheck = mysqli_num_rows($result);
 
 
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <center>
-                <h5 class="card-title">360 horas</h5>
-              </center>
-              <center><img src="img/servicio.png" class="card-img-top" alt=""></center>
-              <p class="card-text">
+  if ($resultcheck > 0) {
 
-              <ul class="talleres2">
-                <li>Desarrollo Administrativa de Aplicaciones Informaticas</li>
-                <li>Gestion Administrativa y Tributaria</li>
-                <li>Electricidad</li>
-                <li>Electrónica</li>
-                <li>Ebanistería</li>
-              </ul>
+    $row = mysqli_fetch_assoc($result);
+    $nom_emp = $row['nombre_empresa'];
+    $nom_puest = $row['nombre_puesto'];
+    $funcion_puest = $row['funciones_puesto'];
+    $sueldo = $row['sueldo'];
+    $ubicacion = $row['ubicacion'];
+    $tp_contrato = $row['tipo_contrato'];
+    $horario = $row['horario'];
+    $curricul = $row['correo_curriculum'];
+    $p_contacto = $row['persona_contacto'];
+    $tel = $row['telefono'];
+  } else {
+  ?>
+    <script>
+      Swal.fire({
+        icon: 'error',
+        title: 'ID de la vacante no encontrada',
+        text: 'Registro no encontrado, Revise los datos introducidos'
+      }).then(function() {
+        window.location.href = "editarvaca.php"
+      })
+    </script>
 
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <center>
-                <h5 class="card-title">720 horas</h5>
-              </center>
-              <center><img src="img/industrial.png" class="card-img-top" alt=""></center>
-              <p class="card-text">
+  <?php
+  }
+  ?>
 
-              <ul class="talleres4">
-                <li>Confeccion y Patronaje</li>
-                <li>Mecanizado</li>
-                <li>Industrial</li>
-              </ul>
+  <section class="form-egre">
 
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
+    <form action="actualizarvaca.php" method="POST">
+      <input type="text" class="formu" select class="controls" name="idvacantes" placeholder="Id" value="<?php echo $idvacantes ?>"><br><br>
+      <input type="text" class="formu" select class="controls" name="nombre_empresa" placeholder="Nombre" value="<?php echo $nom_emp ?>"><br><br>
+      <input type="text" class="formu" select class="controls" name="nombre_puesto" placeholder="Puesto" value="<?php echo $nom_puest ?>"><br><br>
+      <input type="text" class="formu" select class="controls" name="funciones_puesto" placeholder="Funcion del puesto" value="<?php echo $funcion_puest ?>"><br><br>
+      <input type="text" class="formu" select class="controls" name="sueldo" placeholder="Sueldo" value="<?php echo $sueldo ?>"><br><br>
+      <input type="text" class="formu" select class="controls" name="ubicacion" placeholder="Ubicacion" value="<?php echo $ubicacion ?>"><br><br>
+      <input type="text" class="formu" select class="controls" name="tipo_contrato" placeholder="Tipo de contrato" value="<?php echo $tp_contrato ?>"><br><br>
+      <input type="text" class="formu" select class="controls" name="horario" placeholder="Horario" value="<?php echo $horario ?>"><br><br>
+      <input type="text" class="formu" select class="controls" name="correo_curriculum" placeholder="Correo curriculum" value="<?php echo $curricul ?>"><br><br>
+      <input type="text" class="formu" select class="controls" name="persona_contacto" placeholder="Persona de contacto" value="<?php echo $p_contacto ?>"><br><br>
+      <input type="text" class="formu" select class="controls" name="telefono" placeholder="Telefono" value="<?php echo $tel ?>"><br><br>
 
+
+      <button type="submit" button class="botons" name="update">Editar</button>
+  </section>
+  </form>
   <div class="container my-5">
 
     <footer class="text-center text-lg-start" style="background-color: #1f6fc1;">
@@ -159,9 +148,8 @@
 
   </div>
 
-
-  <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

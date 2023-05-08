@@ -5,12 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="css/estilo.css">
-  <title>IPISA</title>
+  <title>Buscar</title>
+
+
+
 </head>
 
 <body>
+
   <header>
 
     <nav class="navbar navbar-expand-lg bg-secondary">
@@ -62,81 +67,99 @@
   <br>
 
   <main class="container o-container">
-    <div class="container" id="who">
-
-      <div class="lead1">
 
 
-        <h1>¿Qué es el módulo de Formación en Centros de Trabajo</h1>
-        <br><br>
-        <p>El Módulo de formación en Centros de Trabajo (MFCT), es un bloque coherente de formación específica, constituido
-          por un conjunto de resultados de aprendizaje y unos criterios de evaluación que orientan la realización de las a
-          ctividades formativas de los estudiantes en el centro de trabajo. Es una porción del programa de estudio,
-          donde los estudiantes de bachilleratos técnicos realizan una práctica laboral de aprendizaje dentro de un
-          Centro de Trabajo, ya sea empresa,institución u organización, a fin de que estos desarrollen nuevas competencias
-          y fortalezcan los conocimientos adquiridos en su Centro Educativo que les permitan insertarse en el mercado laboral.
-        </p>
-      </div>
-    </div>
+    <div class="cn">
+      <table class="table">
+        <thead>
+          <tr>
+            <th name="ID">ID</th>
+            <th>Nombre</th>
+            <th>RNC</th>
+            <th>Identificación</th>
+            <th>Depto. Formación</th>
+            <th>Alcance</th>
+            <th>Actividad</th>
+            <th>Industria</th>
+            <th>Tamaño</th>
+            <th>Dirección</th>
+            <th>sector</th>
+            <th>Sección</th>
+            <th>municipio</th>
+            <th>Provincia</th>
+            <th>País</th>
+            <th>Teléfono Principal</th>
+            <th>Teléfono Directo</th>
+            <th>Email</th>
+            <th>Confirmación de Email</th>
+            <th>Contraseña</th>
+            <th>confirmación de Contraseña</th>
+            <th>Contacto</th>
+            <th>Teléfono del contacto</th>
+            <th>Email del contacto</th>
 
-    <br><br>
+          </tr>
+        </thead>
 
-    <img src="img/pasantia.jpg" width="550" alt="" class="box-img2">
+        <?php
+        require("conexionvaca.php");
 
-    <br><br>
+        $nombre = $_REQUEST['nom_emp'];
+        $query = "SELECT * FROM empresa WHERE nom_emp LIKE '%$nombre%' or idempresa='$nombre'";
+        $data = mysqli_query($conexionvaca, $query);
+        $total = mysqli_num_rows($data);
 
-    <div class="container marketing">
-      <center>
-        <h2 class="h2">Cantidad de horas correspondientes a pasantía por taller:</h2>
-      </center>
-      <br>
+        if ($total != 0) {
+          while ($row = mysqli_fetch_assoc($data)) {
 
+            echo
 
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <center>
-                <h5 class="card-title">360 horas</h5>
-              </center>
-              <center><img src="img/servicio.png" class="card-img-top" alt=""></center>
-              <p class="card-text">
+            "<tr>
+        <td>" . $row['idempresa'] . "</td>
+        <td>" . $row['nom_emp'] . "</td>
+        <td>" . $row['rnc'] . "</td>
+        <td>" . $row['ident_emp'] . "</td>
+        <td>" . $row['dept_formacion'] . "</td>
+        <td>" . $row['alcance_emp'] . "</td>
+        <td>" . $row['actividad_emp'] . "</td>
+        <td>" . $row['industria'] . "</td>
+        <td>" . $row['tamano_emp'] . "</td>
+        <td>" . $row['direccion'] . "</td>
+        <td>" . $row['sector'] . "</td>
+        <td>" . $row['seccion'] . "</td>
+        <td>" . $row['municipio'] . "</td>
+        <td>" . $row['provincia'] . "</td>
+        <td>" . $row['pais_emp'] . "</td>
+        <td>" . $row['tel_principal'] . "</td>
+        <td>" . $row['tel_directo'] . "</td>
+        <td>" . $row['email'] . "</td>
+        <td>" . $row['confirmacion_email'] . "</td>
+        <td>" . $row['contrasena'] . "</td>
+        <td>" . $row['confirmacion_contrasena'] . "</td>
+        <td>" . $row['contacto_dentro_emp'] . "</td>
+        <td>" . $row['tel_contacto'] . "</td>
+        <td>" . $row['email_contacto'] . "</td>
+        <td> <a href='eliminaremp.php?id=$row[idempresa]'>Borrar</td>
+        </tr>";;
+          }
+        } else {
+        ?>
+          <script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Nombre o ID invalido',
+              text: 'Registro no encontrado, Revise los datos introducidos'
+            }).then(function() {
+              window.location.href = "editaremp.php"
+            })
+          </script>
+        <?php
+        }
+        ?>
 
-              <ul class="talleres2">
-                <li>Desarrollo Administrativa de Aplicaciones Informaticas</li>
-                <li>Gestion Administrativa y Tributaria</li>
-                <li>Electricidad</li>
-                <li>Electrónica</li>
-                <li>Ebanistería</li>
-              </ul>
-
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <center>
-                <h5 class="card-title">720 horas</h5>
-              </center>
-              <center><img src="img/industrial.png" class="card-img-top" alt=""></center>
-              <p class="card-text">
-
-              <ul class="talleres4">
-                <li>Confeccion y Patronaje</li>
-                <li>Mecanizado</li>
-                <li>Industrial</li>
-              </ul>
-
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      </table>
     </div>
   </main>
-
   <div class="container my-5">
 
     <footer class="text-center text-lg-start" style="background-color: #1f6fc1;">
@@ -159,9 +182,8 @@
 
   </div>
 
-
-  <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

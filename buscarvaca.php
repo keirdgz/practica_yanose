@@ -5,12 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="css/estilo.css">
-  <title>IPISA</title>
+  <title>Buscar</title>
+
+
+
 </head>
 
 <body>
+
   <header>
 
     <nav class="navbar navbar-expand-lg bg-secondary">
@@ -47,8 +52,8 @@
                 Edición de formularios
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="editaregre.php">Estudiantes y egresados</a></li>
-                <li><a class="dropdown-item" href="editaremp.php">Empresas</a></li>
+                <li><a class="dropdown-item" href="egresados.php">Estudiantes y egresados</a></li>
+                <li><a class="dropdown-item" href="formpasantia.php">Empresas</a></li>
                 <li><a class="dropdown-item" href="editarvaca.php">Vacantes</a></li>
               </ul>
           </ul>
@@ -62,81 +67,72 @@
   <br>
 
   <main class="container o-container">
-    <div class="container" id="who">
 
-      <div class="lead1">
+    <table class="table">
+      <thead>
+        <tr>
+          <th name="ID">ID</th>
+          <th>Empresa</th>
+          <th>Puesto</th>
+          <th>FuncionP</th>
+          <th>Sueldo</th>
+          <th>Ubicacion</th>
+          <th>Contrato</th>
+          <th>Horario</th>
+          <th>Correo</th>
+          <th>Contacto</th>
+          <th>Telefono</th>
+          <th>Borrar</th>
 
+        </tr>
+      </thead>
 
-        <h1>¿Qué es el módulo de Formación en Centros de Trabajo</h1>
-        <br><br>
-        <p>El Módulo de formación en Centros de Trabajo (MFCT), es un bloque coherente de formación específica, constituido
-          por un conjunto de resultados de aprendizaje y unos criterios de evaluación que orientan la realización de las a
-          ctividades formativas de los estudiantes en el centro de trabajo. Es una porción del programa de estudio,
-          donde los estudiantes de bachilleratos técnicos realizan una práctica laboral de aprendizaje dentro de un
-          Centro de Trabajo, ya sea empresa,institución u organización, a fin de que estos desarrollen nuevas competencias
-          y fortalezcan los conocimientos adquiridos en su Centro Educativo que les permitan insertarse en el mercado laboral.
-        </p>
-      </div>
-    </div>
+      <?php
+      require("conexionvaca.php");
 
-    <br><br>
+      $nombre_empresa = $_REQUEST["nombre"];
 
-    <img src="img/pasantia.jpg" width="550" alt="" class="box-img2">
+      $query = "SELECT * FROM vacantes WHERE nombre_empresa LIKE '%$nombre_empresa%' or idvacantes='$nombre_empresa'";
+      $data = mysqli_query($conexionvaca, $query);
+      $total = mysqli_num_rows($data);
 
-    <br><br>
+      if ($total != 0) {
+        while ($row = mysqli_fetch_assoc($data)) {
 
-    <div class="container marketing">
-      <center>
-        <h2 class="h2">Cantidad de horas correspondientes a pasantía por taller:</h2>
-      </center>
-      <br>
+          echo
 
+          "<tr>
+        <td>" . $row['idvacantes'] . "</td>
+        <td>" . $row['nombre_empresa'] . "</td>
+        <td>" . $row['nombre_puesto'] . "</td>
+        <td>" . $row['funciones_puesto'] . "</td>
+        <td>" . $row['sueldo'] . "</td>
+        <td>" . $row['ubicacion'] . "</td>
+        <td>" . $row['tipo_contrato'] . "</td>
+        <td>" . $row['horario'] . "</td>
+        <td>" . $row['correo_curriculum'] . "</td>
+        <td>" . $row['persona_contacto'] . "</td>
+        <td>" . $row['telefono'] . "</td>
+        <td> <a href='eliminarvaca.php?id=$row[idvacantes]'>Borrar</td>
+        </tr>";;
+        }
+      } else {
+      ?>
+        <script>
+          Swal.fire({
+            icon: 'error',
+            title: 'Nombre o ID invalido',
+            text: 'Registro no encontrado, Revise los datos introducidos'
+          }).then(function() {
+            window.location.href = "editarvaca.php"
+          })
+        </script>
+      <?php
+      }
+      ?>
 
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <center>
-                <h5 class="card-title">360 horas</h5>
-              </center>
-              <center><img src="img/servicio.png" class="card-img-top" alt=""></center>
-              <p class="card-text">
-
-              <ul class="talleres2">
-                <li>Desarrollo Administrativa de Aplicaciones Informaticas</li>
-                <li>Gestion Administrativa y Tributaria</li>
-                <li>Electricidad</li>
-                <li>Electrónica</li>
-                <li>Ebanistería</li>
-              </ul>
-
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <center>
-                <h5 class="card-title">720 horas</h5>
-              </center>
-              <center><img src="img/industrial.png" class="card-img-top" alt=""></center>
-              <p class="card-text">
-
-              <ul class="talleres4">
-                <li>Confeccion y Patronaje</li>
-                <li>Mecanizado</li>
-                <li>Industrial</li>
-              </ul>
-
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </table>
   </main>
-
   <div class="container my-5">
 
     <footer class="text-center text-lg-start" style="background-color: #1f6fc1;">
@@ -159,9 +155,8 @@
 
   </div>
 
-
-  <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

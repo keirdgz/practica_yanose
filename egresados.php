@@ -1,82 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/estilo.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
+
 <body>
 
-<header>
+  <header>
 
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-              <a class="navbar-brand">IPISA</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="inicio.php">Inicio</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Saber Más
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="pasantia.php">Pasantia</a></li>
-                      <li><a class="dropdown-item" href="colaboraciones.php">Colaboraciones</a></li>
-                      <li><a class="dropdown-item" href="familia.php">Familia</a></li>
-                    </ul>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Registrarse
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="egresados.php">Estudiantes y egresados</a></li>
-                        <li><a class="dropdown-item" href="formpasantia.php">Empresas</a></li>
-                        <li><a class="dropdown-item" href="vacantes1.php">Vacantes</a></li>
-                      </ul>
-                      <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Edición de formularios
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="editaregre.php">Estudiantes y egresados</a></li>
-                        <li><a class="dropdown-item" href="editaremp.php">Empresas</a></li>
-                        <li><a class="dropdown-item" href="editarvaca.php">Vacantes</a></li>
-                      </ul>
-                </ul>
-              </div>
-            </div>
-          </nav>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand">IPISA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="inicio.php">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Saber Más
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="pasantia.php">Pasantia</a></li>
+                <li><a class="dropdown-item" href="colaboraciones.php">Colaboraciones</a></li>
+                <li><a class="dropdown-item" href="familia.php">Familia</a></li>
+              </ul>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Registrarse
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="egresados.php">Estudiantes y egresados</a></li>
+                <li><a class="dropdown-item" href="formpasantia.php">Empresas</a></li>
+                <li><a class="dropdown-item" href="vacantes1.php">Vacantes</a></li>
+              </ul>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Edición de formularios
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="editaregre.php">Estudiantes y egresados</a></li>
+                <li><a class="dropdown-item" href="editaremp.php">Empresas</a></li>
+                <li><a class="dropdown-item" href="editarvaca.php">Vacantes</a></li>
+              </ul>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    </header>
+  </header>
 
-    <div class="w-750 m-3 p-3">
+  <div class="w-750 m-3 p-3">
 
     <section class="form-egre">
 
-        <center><h1>Registro de Estudiante o Egresado</h1></center>
+      <center>
+        <h1>Registro de Estudiante o Egresado</h1>
+      </center>
 
-        <form method="post">
+      <form method="post">
         <div class="form-group">
-        Año de Graduación: <br>
-        <select class="formu" select class="controls" name="AnoGraduacion">
+          Año de Graduación: <br>
+          <select class="formu" select class="controls" name="AnoGraduacion">
             <option value="--Seleccione el año--">--Seleccione el año--</option>
             <option value="2018-2022">2018-2022</option>
             <option value="2019-2023">2019-2023</option>
             <option value="2020-2024">2020-2024</option>
-        </select>
+          </select>
         </div><br><br>
         <div class="form-group">
-        Institución educativa a la que pertenece: <br>
-        <select class="formu" select class="controls" name="Institución">
+          Institución educativa a la que pertenece: <br>
+          <select class="formu" select class="controls" name="Institución">
             <option value="--Seleccione la Institución--">--Seleccione la Institución--</option>
             <option value="Centro de Formación Técnica Evangelización y Renovación Santísima Trinidad (CEVREST) SOPEÑA">Centro de Formación Técnica Evangelización y Renovación Santísima Trinidad (CEVREST) SOPEÑA</option>
             <option value="Centro de Formación y Desarrollo Integral Padre Fantino (CEFODIPF)">Centro de Formación y Desarrollo Integral Padre Fantino (CEFODIPF)</option>
@@ -88,29 +92,29 @@
             <option value="Instituto Politécnico Industrial de Santiago (IPISA)">Instituto Politécnico Industrial de Santiago (IPISA)</option>
             <option value="Instituto Politécnico Industrial Don Bosco (IPIDBOSCO)">Instituto Politécnico Industrial Don Bosco (IPIDBOSCO)</option>
             <option value="Instituto Politécnico Loyola (IPL)">Instituto Politécnico Loyola (IPL)</option>
-        </select><br><br>
+          </select><br><br>
         </div>
         <div class="form-group">
-        Curso: <br>
-        <select class="formu" select class="controls" name="Curso">
+          Curso: <br>
+          <select class="formu" select class="controls" name="Curso">
             <option value="--Seleccione el Curso--">--Seleccione el Curso--</option>
             <option value="3ro">3ro</option>
             <option value="4to">4to</option>
             <option value="5to">5to</option>
             <option value="6to">6to</option>
-        </select><br><br>
+          </select><br><br>
         </div>
         <div class="form-group">
-        Matricula: <br>
-        <input class="formu" select class="controls" type="number" name="Matricula" placeholder=""><br><br>
+          Matricula: <br>
+          <input class="formu" select class="controls" type="number" name="Matricula" placeholder=""><br><br>
         </div>
         <div class="form-group">
-        Cédula de Identidad: <br>
-        <input class="formu" select class="controls" type="number" name="Cedula" placeholder=""><br><br>
+          Cédula de Identidad: <br>
+          <input class="formu" select class="controls" type="number" name="Cedula" placeholder=""><br><br>
         </div>
         <div class="form-group">
-        Carrera Técnica: <br>
-        <select class="formu" select class="controls" name="Carrera">
+          Carrera Técnica: <br>
+          <select class="formu" select class="controls" name="Carrera">
             <option value="--Seleccione la Carrera--">--Seleccione la Carrera--</option>
             <option value="Confección y patronaje">Confección y patronaje</option>
             <option value="Desarrollo y Administración de Aplicaciones Informáticas">Desarrollo y Administración de Aplicaciones Informáticas</option>
@@ -120,53 +124,53 @@
             <option value="Gestión Administrativa y Tributaria">Gestión Administrativa y Tributaria</option>
             <option value="Instalaciones Eléctricas">Instalaciones Eléctricas</option>
             <option value="Mecanizado">Mecanizado</option>
-        </select><br><br>
+          </select><br><br>
         </div>
         <div class="form-group">
-        Técnico Básico: <br>
-        <select class="formu" select class="controls" name="tecnico">
+          Técnico Básico: <br>
+          <select class="formu" select class="controls" name="tecnico">
             <option value="basico">N/A</option>
-        </select><br><br>
+          </select><br><br>
         </div>
         <div class="form-group">
-        Nombres: <br>
-        <input class="formu" select class="controls" type="text" name="Nombres" id="Nombres" placeholder=""><br><br>
+          Nombres: <br>
+          <input class="formu" select class="controls" type="text" name="Nombres" id="Nombres" placeholder=""><br><br>
         </div>
         <div class="form-group">
-        Apellidos: <br>
-        <input class="formu" select class="controls" type="text" name="Apellidos"  placeholder=""><br><br>
+          Apellidos: <br>
+          <input class="formu" select class="controls" type="text" name="Apellidos" placeholder=""><br><br>
         </div>
         <div class="form-group">
-        Fecha de Nacimiento: <br>
-        <input class="formu" select class="controls" type="text" name="FechaN" placeholder=""><br><br>
+          Fecha de Nacimiento: <br>
+          <input class="formu" select class="controls" type="text" name="FechaN" placeholder=""><br><br>
         </div>
         <div class="form-group">
-        Sexo: <br>
-        <select class="formu" select class="controls" name="Sexo">
+          Sexo: <br>
+          <select class="formu" select class="controls" name="Sexo">
             <option value="--Seleccione su Sexo--">--Seleccione su sexo--</option>
             <option value="Masculino">Masculino</option>
             <option value="Femenino">Femenino</option>
-        </select><br><br>
+          </select><br><br>
         </div>
         <div class="form-group">
-        Dirección: <br>
-        <input class="formu" select class="controls" type="text" name="Direccion" placeholder=""><br><br>
+          Dirección: <br>
+          <input class="formu" select class="controls" type="text" name="Direccion" placeholder=""><br><br>
         </div>
         <div class="form-group">
-        Sector: <br>
-        <input class="formu" select class="controls" type="text" name="Sector" placeholder=""><br><br>
+          Sector: <br>
+          <input class="formu" select class="controls" type="text" name="Sector" placeholder=""><br><br>
         </div>
         <div class="form-group">
-        Sección: <br>
-        <input class="formu" select class="controls" type="text" name="Seccion" placeholder=""><br><br>
+          Sección: <br>
+          <input class="formu" select class="controls" type="text" name="Seccion" placeholder=""><br><br>
         </div>
         <div class="form-group">
-        Municipio: <br>
-        <input class="formu" select class="controls" type="text" name="Municipio" placeholder=""><br><br>
+          Municipio: <br>
+          <input class="formu" select class="controls" type="text" name="Municipio" placeholder=""><br><br>
         </div>
         <div class="form-group">
-        Provincia: <br>
-        <select class="formu" select class="controls" name="Provincia">
+          Provincia: <br>
+          <select class="formu" select class="controls" name="Provincia">
             <option value="Azua">Azua</option>
             <option value="Bahoruco">Bahoruco</option>
             <option value="Barahona">Barahona</option>
@@ -199,11 +203,11 @@
             <option value="Santiago Rodríguez">Santiago Rodríguez</option>
             <option value="Santo Domingo">Santo Domingo</option>
             <option value="Valverde">Valverde</option>
-        </select><br><br>
+          </select><br><br>
         </div>
         <div class="form-group">
-        Pais de Nacionalidad: <br>
-        <select class="formu" select class="controls" name="Nacionalidad">
+          Pais de Nacionalidad: <br>
+          <select class="formu" select class="controls" name="Nacionalidad">
             <option value="Afganistan">Afganistan</option>
             <option value="Albania">Albania</option>
             <option value="Alemania">Alemania</option>
@@ -444,68 +448,64 @@
             <option value="Yibuti">Yibuti</option>
             <option value="Zambia">Zambia</option>
             <option value="Zimbabue">Zimbabue</option>
-        </select><br><br>
+          </select><br><br>
         </div>
         <div class="form-group">
-        Telefono Residencial: <br>
-        <input class="formu" select class="controls" type="number" name="TelefonoR" placeholder=""><br><br>
+          Telefono Móvil: <br>
+          <input class="formu" select class="controls" type="number" name="TelefonoM" placeholder=""><br><br>
         </div>
         <div class="form-group">
-        Telefono Móvil: <br>
-        <input class="formu" select class="controls" type="number" name="TelefonoM" placeholder=""><br><br>
-        </div>
-        <div class="form-group">
-        Posee licencia de conducir? <br>
-        <input class="formu" select class="controls" type="radio" name="Licencia">
-        <label for="licencia si">
+          Posee licencia de conducir? <br>
+          <input class="formu" select class="controls" type="radio" name="Licencia">
+          <label for="licencia si">
             <span>Si</span>
-        </label><br>
-        <input class="formu" select class="controls" type="radio" name="Licencia">
-        <label for="licencia no"><br>
+          </label><br>
+          <input class="formu" select class="controls" type="radio" name="Licencia">
+          <label for="licencia no"><br>
             <span>No</span>
-        </label>
+          </label>
         </div>
         <div class="form-group">
-        Posee vehiculo propio? <br>
-        <input class="formu" select class="controls" type="radio" name="Vehiculo">
-        <label for="vehiculosi">
+          Posee vehiculo propio? <br>
+          <input class="formu" select class="controls" type="radio" name="Vehiculo">
+          <label for="vehiculosi">
             <span>Si</span>
-        </label>
-        <input class="formu" select class="controls" type="radio" name="Vehiculo">
-        <label for="vehiculono">
+          </label>
+          <input class="formu" select class="controls" type="radio" name="Vehiculo">
+          <label for="vehiculono">
             <span>No</span>
-        </label>
+          </label>
         </div>
         <div class="form-group">
           <br>
-        Email: <br>
-        <input class="formu" select class="controls" type="email" placeholder="" name="Correo"  required data-error="Por favor ingrese su email." placeholder class="form-control"><br><br>
+          Email: <br>
+          <input class="formu" select class="controls" type="email" placeholder="" name="Correo" required data-error="Por favor ingrese su email." placeholder class="form-control"><br><br>
         </div>
         <div class="form-group">
-        Confirmacion de Email: <br>
-        <input class="formu" select class="controls" type="email" placeholder="" name="CorreoC"  required data-error="Por favor ingrese su email." placeholder class="form-control"><br><br>
+          Confirmacion de Email: <br>
+          <input class="formu" select class="controls" type="email" placeholder="" name="CorreoC" required data-error="Por favor ingrese su email." placeholder class="form-control"><br><br>
         </div>
         <div class="form-group">
-        Elija una contraseña: <br>
-        <input class="formu" select class="controls" type="password" name="Contrasena" required data-error="Por favor ingrese su contraseña."><br><br>
+          Elija una contraseña: <br>
+          <input class="formu" select class="controls" type="password" name="Contrasena" required data-error="Por favor ingrese su contraseña."><br><br>
         </div>
         <div class="form-group">
-        Confirme contraseña: <br>
-        <input class="formu" select class="controls" type="password" name="ContrasenaC" required data-error="Por favor ingrese su contraseña."><br><br>
+          Confirme contraseña: <br>
+          <input class="formu" select class="controls" type="password" name="ContrasenaC" required data-error="Por favor ingrese su contraseña."><br><br>
         </div>
         <div class="form-group">
-        Años de experiencia: <br>
-        <input class="formu" select class="controls" type="text" placeholder="" name="Anos_xp"><br><br>
+          Años de experiencia: <br>
+          <input class="formu" select class="controls" type="text" placeholder="" name="Anos_xp"><br><br>
         </div>
         <div class="form-group">
-        Curriculum Vitae: <br>
-        <input class="formu" select class="controls" type="file" name="Curriculum"><br>
-        <p><strong>Nota: </strong>su currículo debe contener todos los cursos que
-        este haya hecho relacionado al área en la que quiere trabajar.</p><br>
-        Area de trabajo: <br>
+          Curriculum Vitae: <br>
+          <input class="formu" select class="controls" type="file" name="Curriculum"><br>
+          <p><strong>Nota: </strong>su currículo debe contener todos los cursos que
+            este haya hecho relacionado al área en la que quiere trabajar.</p><br>
+          Area de trabajo: <br>
         </div>
         <div class="form-group">
-        <select class="formu" select class="controls" name="Area">
+          <select class="formu" select class="controls" name="Area">
             <option value="--Seleccione el Area de Trabajo--">--Seleccione el Area de Trabajo--</option>
             <option value="Confección y patronaje">Confección y patronaje</option>
             <option value="Desarrollo y Administración de Aplicaciones Informáticas">Desarrollo y Administración de Aplicaciones Informáticas</option>
@@ -515,93 +515,92 @@
             <option value="Gestión Administrativa y Tributaria">Gestión Administrativa y Tributaria</option>
             <option value="Instalaciones Eléctricas">Instalaciones Eléctricas</option>
             <option value="Mecanizado">Mecanizado</option>
-        </select><br><br>
+          </select><br><br>
         </div>
         <div class="form-group">
-        <input type="checkbox" name="Terminos" onclick="agreesubmit(this)">Acepto los <a href="TeryCon.html" class="term"  target="_blank" class="enlace">politica de privacidad</a><br><br>
+          <input type="checkbox" name="Terminos" onclick="agreesubmit(this)">Acepto los <a href="TeryCon.html" class="term" target="_blank" class="enlace">politica de privacidad</a><br><br>
         </div>
         <div class="form-group">
-        <input class="botons" type="submit" value="Aceptar">
+          <input class="botons" type="submit" value="Aceptar">
         </div>
         <div>
-            <a href="cntrl_egre.php"><input class="botons" type="button" value="Control egresados"></a>
+          <a href="cntrl_egre.php"><input class="botons" type="button" value="Control egresados"></a>
         </div>
-</form>
+      </form>
     </section>
-    </div>
-
-    <div class="container my-5">
-
-<footer class="text-center text-lg-start" style="background-color: #1f6fc1;">
-  <div class="container d-flex justify-content-center py-5">
-    <a href="https://www.facebook.com/IPISASDB/"><button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #1b5d9f;">
-      <i class="fa-brands fa-facebook"></i>
-    </button></a>
-    <a href="https://www.instagram.com/ipisasdb/"><button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #1b5d9f;">
-      <i class="fa-brands fa-instagram"></i>
-    </button></a>
   </div>
 
-  <!-- Copyright -->
-  <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2022 Copyright:
-    <a class="text-white" href="inicio.html">IPISA</a>
-  </div>
-  <!-- Copyright -->
-</footer>
+  <div class="container my-5">
 
-</div>
+    <footer class="text-center text-lg-start" style="background-color: #1f6fc1;">
+      <div class="container d-flex justify-content-center py-5">
+        <a href="https://www.facebook.com/IPISASDB/"><button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #1b5d9f;">
+            <i class="fa-brands fa-facebook"></i>
+          </button></a>
+        <a href="https://www.instagram.com/ipisasdb/"><button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #1b5d9f;">
+            <i class="fa-brands fa-instagram"></i>
+          </button></a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright:
+        <a class="text-white" href="inicio.html">IPISA</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+  </div>
 
 </body>
+
 </html>
 
 <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 <?php
 
 require_once "conexionvaca.php";
 insertar($conexionvaca);
-function insertar ($conexionvaca) {
-$ano_graduacion = $_POST['AnoGraduacion'];
-$inst_pertenece = $_POST['Institución'];
-$curso = $_POST['Curso'];
-$matricula = $_POST['Matricula'];
-$cedula = $_POST['Cedula'];
-$carrera_tec = $_POST['Carrera'];
-$tec_basico = $_POST['tecnico'];
-$nombre = $_POST['Nombres'];
-$apellido = $_POST['Apellidos'];
-$fecha_nac = $_POST['FechaN'];
-$sexo = $_POST['Sexo'];
-$direccion = $_POST['Direccion'];
-$sector = $_POST['Sector'];
-$seccion = $_POST['Seccion'];
-$municipio = $_POST['Municipio'];
-$provincia = $_POST['Provincia'];
-$pais_nacionalidad = $_POST['Nacionalidad'];
-$telefonoR = $_POST['TelefonoR'];
-$telefonoM = $_POST['TelefonoM'];
-$licencia_cd = $_POST['Licencia'];
-$vehiculo = $_POST['Vehiculo'];
-$email = $_POST['Correo'];
-$confirmacion_em = $_POST['Correoc'];
-$contrasena = $_POST['Contrasena'];
-$confirmacion_contra = $_POST['ContrasenaC'];
-$anos_xp = $_POST['Anos_xp'];
-$curriculum = $_POST['Curriculum'];
-$area_trabajo = $_POST['Area'];
+function insertar($conexionvaca)
+{
+  $ano_graduacion = $_POST['AnoGraduacion'];
+  $inst_pertenece = $_POST['Institución'];
+  $curso = $_POST['Curso'];
+  $matricula = $_POST['Matricula'];
+  $cedula = $_POST['Cedula'];
+  $carrera_tec = $_POST['Carrera'];
+  $tec_basico = $_POST['tecnico'];
+  $nombre = $_POST['Nombres'];
+  $apellido = $_POST['Apellidos'];
+  $fecha_nac = $_POST['FechaN'];
+  $sexo = $_POST['Sexo'];
+  $direccion = $_POST['Direccion'];
+  $sector = $_POST['Sector'];
+  $seccion = $_POST['Seccion'];
+  $municipio = $_POST['Municipio'];
+  $provincia = $_POST['Provincia'];
+  $pais_nacionalidad = $_POST['Nacionalidad'];
+  $telefonoM = $_POST['TelefonoM'];
+  $licencia_cd = $_POST['Licencia'];
+  $vehiculo = $_POST['Vehiculo'];
+  $email = $_POST['Correo'];
+  $confirmacion_em = $_POST['Correoc'];
+  $contrasena = $_POST['Contrasena'];
+  $confirmacion_contra = $_POST['ContrasenaC'];
+  $anos_xp = $_POST['Anos_xp'];
+  $curriculum = $_POST['Curriculum'];
+  $area_trabajo = $_POST['Area'];
 
-$consulta = "INSERT INTO egresados(ano_graduacion, inst_pertenece, curso, matricula, cedula, carrera_tec, tec_basico, nombre, apellido, 
-fecha_nac, sexo, direccion, sector, seccion, municipio, provincia, pais_nacionalidad, telefonoR, telefonoM, licencia_cd, vehiculo, email, 
+  $consulta = "INSERT INTO egresados(ano_graduacion, inst_pertenece, curso, matricula, cedula, carrera_tec, tec_basico, nombre, apellido, 
+fecha_nac, sexo, direccion, sector, seccion, municipio, provincia, pais_nacionalidad, telefono, licencia_cd, vehiculo, email, 
 confirmacion_em, contrasena, confirmacion_contra, anos_xp, curriculum, area_trabajo) VALUES ('$ano_graduacion', '$inst_pertenece','$curso',
 '$matricula','$cedula','$carrera_tec','$tec_basico','$nombre','$apellido','$fecha_nac','$sexo','$direccion','$sector', '$seccion','$municipio',
-'$provincia','$pais_nacionalidad','$telefonoR','$telefonoM','$licencia_cd','$vehiculo','$email','$confirmacion_em', '$contrasena',
+'$provincia','$pais_nacionalidad','$telefonoM','$licencia_cd','$vehiculo','$email','$confirmacion_em', '$contrasena',
 '$confirmacion_contra','$anos_xp','$curriculum','$area_trabajo')";
 
-mysqli_query($conexionvaca, $consulta);
-mysqli_close($conexionvaca);
-
-echo $consulta;
+  mysqli_query($conexionvaca, $consulta);
+  mysqli_close($conexionvaca);
 }
 ?>

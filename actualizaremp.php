@@ -5,12 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/estilo.css">
-  <title>IPISA</title>
+  <title>Actualizar empresa</title>
 </head>
 
 <body>
+
   <header>
 
     <nav class="navbar navbar-expand-lg bg-secondary">
@@ -58,65 +57,24 @@
 
   </header>
 
-  <br>
-  <br>
 
-  <main class="container o-container">
-    <div class="container" id="who">
-
-      <div class="lead">
-
-        <h1>Responsabilidades por parte de la familia</h1>
-        <center><img src="img/centro_trabajo2.jpg" width="650"></center>
-
-        <br>
-
-        <ul class="requisitos">
-          <li><strong>Funciones del padre o tutor del estudiante
-              En referencia al MFC</strong></li>
-          <br>
-          <h5><strong>En referencia al MFCT, serán funciones del padre, madre o tutor:</strong></h5>
-
-          <ul class="requisito">
-            <li>Firmar la Carta de Consentimiento para que los estudiantes bajo su tutela puedan participar en el MFCT.</li>
-            <br>
-            <li>Dar seguimiento a la participación del estudiante bajo su tutela en el MFCT.</li>
-            <br>
-            <li>Cubrir los gastos del estudiante bajo su tutela para la realización del MFCT (viáticos, dieta, vestimenta, entre otras).</li>
-            <br>
-            <li>Apoyar al estudiante bajo su tutela en el proceso de MFCT.</li>
-          </ul>
-
-      </div>
-    </div>
-  </main>
-
-  <div class="container my-5">
-
-    <footer class="text-center text-lg-start" style="background-color: #1f6fc1;">
-      <div class="container d-flex justify-content-center py-5">
-        <a href="https://www.facebook.com/IPISASDB/"><button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #1b5d9f;">
-            <i class="fa-brands fa-facebook"></i>
-          </button></a>
-        <a href="https://www.instagram.com/ipisasdb/"><button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #1b5d9f;">
-            <i class="fa-brands fa-instagram"></i>
-          </button></a>
-      </div>
-
-      <!-- Copyright -->
-      <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2022 Copyright:
-        <a class="text-white" href="inicio.html">IPISA</a>
-      </div>
-      <!-- Copyright -->
-    </footer>
-
-  </div>
-
-
-  <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 
 </html>
+
+<?php
+
+include_once 'conexionvaca.php';
+
+
+$id = $_REQUEST['idempresa'];
+
+$query = "update empresa set nom_emp='$_REQUEST[nom_emp]', rnc='$_REQUEST[rnc]', ident_emp='$_REQUEST[ident_emp]', dept_formacion='$_REQUEST[dept_formacion]', alcance_emp='$_REQUEST[alcance_emp]', actividad_emp='$_REQUEST[actividad_emp]', 
+    industria='$_REQUEST[industria]', tamano_emp='$_REQUEST[tamano_emp]', direccion='$_REQUEST[direccion]', sector='$_REQUEST[sector]', seccion='$_REQUEST[seccion]', municipio='$_REQUEST[municipio]', provincia='$_REQUEST[provincia]', pais_emp='$_REQUEST[pais_emp]', tel_principal='$_REQUEST[tel_principal]',
+    tel_directo='$_REQUEST[tel_directo]', email='$_REQUEST[email]', confirmacion_email='$_REQUEST[confirmacion_email]', contrasena='$_REQUEST[contrasena]', confirmacion_contrasena='$_REQUEST[confirmacion_contrasena]', contacto_dentro_emp='$_REQUEST[contacto_dentro_emp]', tel_contacto='$_REQUEST[tel_contacto]', email_contacto='$_REQUEST[email_contacto]' where idempresa='$_REQUEST[idempresa]'";
+
+mysqli_query($conexion, $query);
+
+
+
+?>

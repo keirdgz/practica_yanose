@@ -5,12 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="css/estilo.css">
-  <title>IPISA</title>
+  <title>Buscar</title>
+
+
+
 </head>
 
 <body>
+
   <header>
 
     <nav class="navbar navbar-expand-lg bg-secondary">
@@ -62,81 +67,106 @@
   <br>
 
   <main class="container o-container">
-    <div class="container" id="who">
 
-      <div class="lead1">
+    <table class="table">
+      <thead>
+        <tr>
+          <th name="Id">Id</th>
+          <th>año graduacion</th>
+          <th>Institución a la que pertenece</th>
+          <th>Curso</th>
+          <th>Matricula</th>
+          <th>Cedula</th>
+          <th>carrera tecnica</th>
+          <th>Tecnico basico</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Sexo</th>
+          <th>Direccion</th>
+          <th>Sector</th>
+          <th>Seccion</th>
+          <th>Municipio</th>
+          <th>Provincia</th>
+          <th>Pais de Nacionalidad</th>
+          <th>TelefonoR</th>
+          <th>TelefonoM</th>
+          <th>Licencia de Conducir</th>
+          <th>Tiene Vehiculo</th>
+          <th>Correo</th>
+          <th>Confirmacion de Correo</th>
+          <th>Contraseña</th>
+          <th>Confirmacion de Contraseña</th>
+          <th>Curriculum</th>
+          <th>Area de Trabajo</th>
+          <th>Años de Experiencia</th>
 
+        </tr>
+      </thead>
+      <?php
+      require("conexionvaca.php");
 
-        <h1>¿Qué es el módulo de Formación en Centros de Trabajo</h1>
-        <br><br>
-        <p>El Módulo de formación en Centros de Trabajo (MFCT), es un bloque coherente de formación específica, constituido
-          por un conjunto de resultados de aprendizaje y unos criterios de evaluación que orientan la realización de las a
-          ctividades formativas de los estudiantes en el centro de trabajo. Es una porción del programa de estudio,
-          donde los estudiantes de bachilleratos técnicos realizan una práctica laboral de aprendizaje dentro de un
-          Centro de Trabajo, ya sea empresa,institución u organización, a fin de que estos desarrollen nuevas competencias
-          y fortalezcan los conocimientos adquiridos en su Centro Educativo que les permitan insertarse en el mercado laboral.
-        </p>
-      </div>
-    </div>
+      $Nombre = $_REQUEST["nombre"] ?? null;
 
-    <br><br>
+      $query = "SELECT * FROM egresados WHERE nombre LIKE '%$Nombre%' or idegresados='$Nombre'";
+      $data = mysqli_query($conexionvaca, $query);
+      $total = mysqli_num_rows($data);
 
-    <img src="img/pasantia.jpg" width="550" alt="" class="box-img2">
+      if ($total != 0) {
+        while ($row = mysqli_fetch_assoc($data)) {
 
-    <br><br>
+          echo
 
-    <div class="container marketing">
-      <center>
-        <h2 class="h2">Cantidad de horas correspondientes a pasantía por taller:</h2>
-      </center>
-      <br>
+          "<tr>
+            <td>" . $row['idegresados'] . "</td>
+            <td>" . $row['ano_graduacion'] . "</td>
+            <td>" . $row['inst_pertenece'] . "</td>
+            <td>" . $row['curso'] . "</td>
+            <td>" . $row['matricula'] . "</td>
+            <td>" . $row['cedula'] . "</td>
+            <td>" . $row['carrera_tec'] . "</td>
+            <td>" . $row['tec_basico'] . "</td>
+            <td>" . $row['nombre'] . "</td>
+            <td>" . $row['apellido'] . "</td>
+            <td>" . $row['fecha_nac'] . "</td>
+            <td>" . $row['sexo'] . "</td>
+            <td>" . $row['direccion'] . "</td>
+            <td>" . $row['sector'] . "</td>
+            <td>" . $row['seccion'] . "</td>
+            <td>" . $row['municipio'] . "</td>
+            <td>" . $row['provincia'] . "</td>
+            <td>" . $row['pais_nacionalidad'] . "</td>
+            <td>" . $row['telefono'] . "</td>
+            <td>" . $row['licencia_cd'] . "</td>
+            <td>" . $row['vehiculo'] . "</td>
+            <td>" . $row['email'] . "</td>
+            <td>" . $row['confirmacion_em'] . "</td>
+            <td>" . $row['contrasena'] . "</td>
+            <td>" . $row['confirmacion_contra'] . "</td>
+            <td>" . $row['anos_xp'] . "</td>
+            <td>" . $row['curriculum'] . "</td>
+            <td>" . $row['area_trabajo'] . "</td>
+        <td> <a href='eliminaregre.php?id=$row[idegresados]'>Borrar</td>
+        </tr>";;
+        }
+      } else {
+      ?>
+        <script>
+          Swal.fire({
+            icon: 'error',
+            title: 'Nombre o ID invalido',
+            text: 'Registro no encontrado, Revise los datos introducidos'
+          }).then(function() {
+            window.location.href = "editaregre.php"
+          })
+        </script>
 
+      <?php
+      }
+      ?>
 
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <center>
-                <h5 class="card-title">360 horas</h5>
-              </center>
-              <center><img src="img/servicio.png" class="card-img-top" alt=""></center>
-              <p class="card-text">
-
-              <ul class="talleres2">
-                <li>Desarrollo Administrativa de Aplicaciones Informaticas</li>
-                <li>Gestion Administrativa y Tributaria</li>
-                <li>Electricidad</li>
-                <li>Electrónica</li>
-                <li>Ebanistería</li>
-              </ul>
-
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <center>
-                <h5 class="card-title">720 horas</h5>
-              </center>
-              <center><img src="img/industrial.png" class="card-img-top" alt=""></center>
-              <p class="card-text">
-
-              <ul class="talleres4">
-                <li>Confeccion y Patronaje</li>
-                <li>Mecanizado</li>
-                <li>Industrial</li>
-              </ul>
-
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </table>
   </main>
-
   <div class="container my-5">
 
     <footer class="text-center text-lg-start" style="background-color: #1f6fc1;">
@@ -152,16 +182,15 @@
       <!-- Copyright -->
       <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2022 Copyright:
-        <a class="text-white" href="inicio.html">IPISA</a>
+        <a class="text-white" href="inicio.php">IPISA</a>
       </div>
       <!-- Copyright -->
     </footer>
 
   </div>
 
-
-  <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/47066a961f.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
